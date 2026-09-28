@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Exam Hall Seating System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- LOGIN PAGE -->
+
+    <div id="loginPage" class="login-page">
+
+        <div class="login-box">
+
+            <h1>🎓 Exam Hall</h1>
+
+            <p>Seating Arrangement System</p>
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Username"
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+            >
+
+            <button onclick="login()">
+                Login
+            </button>
+
+            <p id="loginMessage"></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- DASHBOARD -->
+
+    <div id="dashboardPage" class="dashboard-page">
+
+        <header>
+
+            <div>
+                <h1>🎓 Exam Hall Seating System</h1>
+                <p>Smart Seating Arrangement Dashboard</p>
+            </div>
+
+            <button class="logout-btn" onclick="logout()">
+                Logout
+            </button>
+
+        </header>
+
+
+        <div class="dashboard-container">
+
+            <!-- SIDEBAR -->
+
+            <aside>
+
+                <h2>Menu</h2>
+
+                <button onclick="showSection('dashboard')">
+                    🏠 Dashboard
+                </button>
+
+                <button onclick="showSection('halls')">
+                    🏫 Halls
+                </button>
+
+                <button onclick="showSection('students')">
+                    👨‍🎓 Students
+                </button>
+
+                <button onclick="showSection('exams')">
+                    📝 Exams
+                </button>
+
+                <button onclick="showSection('seating')">
+                    🪑 Seating
+                </button>
+
+            </aside>
+
+
+            <!-- MAIN CONTENT -->
+
+            <main>
+
+                <!-- DASHBOARD -->
+
+                <section id="dashboardSection">
+
+                    <h2>Dashboard</h2>
+
+                    <div class="cards">
+
+                        <div class="card">
+                            <h3>🏫 Halls</h3>
+                            <p id="hallCount">0</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>👨‍🎓 Students</h3>
+                            <p id="studentCount">0</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>📝 Exams</h3>
+                            <p id="examCount">0</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>🪑 Seats</h3>
+                            <p id="seatCount">0</p>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- HALLS -->
+
+                <section id="hallsSection" class="hidden">
+
+                    <h2>Exam Halls</h2>
+
+                    <div id="hallsContainer"></div>
+
+                </section>
+
+
+                <!-- STUDENTS -->
+
+                <section id="studentsSection" class="hidden">
+
+                    <h2>Students</h2>
+
+                    <div id="studentsContainer"></div>
+
+                </section>
+
+
+                <!-- EXAMS -->
+
+                <section id="examsSection" class="hidden">
+
+                    <h2>Exams</h2>
+
+                    <div id="examsContainer"></div>
+
+                </section>
+
+
+                <!-- SEATING -->
+
+                <section id="seatingSection" class="hidden">
+
+                    <h2>Generate Seating Arrangement</h2>
+
+                    <div class="generate-box">
+
+                        <label>Select Hall:</label>
+
+                        <select id="hallSelect">
+                            <option value="">
+                                Select a hall
+                            </option>
+                        </select>
+
+                        <button onclick="generateSeating()">
+                            Generate Seating
+                        </button>
+
+                    </div>
+
+                    <div id="seatingContainer"></div>
+
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
